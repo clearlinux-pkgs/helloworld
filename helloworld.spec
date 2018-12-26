@@ -56,4 +56,3 @@ rm -rf %{buildroot}
 /usr/bin/helloworld
 /usr/bin/matrix_multiplication
 /usr/bin/pi_calculation
-/usr/bin/letsseethispackagefail
