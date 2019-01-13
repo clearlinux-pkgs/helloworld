@@ -11,6 +11,7 @@ Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0+ GPL-3.0
 Requires: helloworld-bin
+Provides: libX11-license
 
 %description
 No detailed description available
