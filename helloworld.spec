@@ -4,14 +4,14 @@
 #
 Name     : helloworld
 Version  : 4
-Release  : 131
+Release  : 132
 URL      : http://localhost/cgit/projects/helloworld/snapshot/helloworld-4.tar.bz2
 Source0  : http://localhost/cgit/projects/helloworld/snapshot/helloworld-4.tar.bz2
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0+ GPL-3.0
-Requires: helloworld-bin
-Provides: libX11-license
+Requires: helloworld-bin = %{version}-%{release}
+Requires: helloworld-license = %{version}-%{release}
 
 %description
 No detailed description available
@@ -19,9 +19,18 @@ No detailed description available
 %package bin
 Summary: bin components for the helloworld package.
 Group: Binaries
+Requires: helloworld-license = %{version}-%{release}
 
 %description bin
 bin components for the helloworld package.
+
+
+%package license
+Summary: license components for the helloworld package.
+Group: Default
+
+%description license
+license components for the helloworld package.
 
 
 %prep
@@ -32,7 +41,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1519589826
+export SOURCE_DATE_EPOCH=1547603297
 %reconfigure --disable-static
 make  %{?_smp_mflags}
 
@@ -44,8 +53,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1519589826
+export SOURCE_DATE_EPOCH=1547603297
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/helloworld
+cp COPYING %{buildroot}/usr/share/package-licenses/helloworld/COPYING
 %make_install
 
 %files
@@ -57,3 +68,7 @@ rm -rf %{buildroot}
 /usr/bin/helloworld
 /usr/bin/matrix_multiplication
 /usr/bin/pi_calculation
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/helloworld/COPYING
