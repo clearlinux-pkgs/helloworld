@@ -4,7 +4,7 @@
 #
 Name     : helloworld
 Version  : 4
-Release  : 171
+Release  : 172
 URL      : http://localhost/cgit/projects/helloworld/snapshot/helloworld-4.tar.bz2
 Source0  : http://localhost/cgit/projects/helloworld/snapshot/helloworld-4.tar.bz2
 Summary  : No detailed summary available
@@ -42,7 +42,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1604541085
+export SOURCE_DATE_EPOCH=1652646138
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -59,7 +59,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1604541085
+export SOURCE_DATE_EPOCH=1652646138
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/helloworld
 cp %{_builddir}/helloworld-4/COPYING %{buildroot}/usr/share/package-licenses/helloworld/8624bcdae55baeef00cd11d5dfcfa60f68710a02
