@@ -6,7 +6,7 @@
 #
 Name     : helloworld
 Version  : 4
-Release  : 187
+Release  : 188
 URL      : http://localhost/cgit/projects/helloworld/snapshot/helloworld-4.tar.bz2
 Source0  : http://localhost/cgit/projects/helloworld/snapshot/helloworld-4.tar.bz2
 Summary  : No detailed summary available
